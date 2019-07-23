@@ -1,0 +1,17 @@
+﻿<div *ngIf="data">
+<p>
+  Displaying {{ data._id }}. <br>   
+</p>
+<table>
+  <thead>
+  <tr>   
+    <th data-field="name">Id</th>
+    <th data-field="name">Test</th>
+  </tr>
+  </thead>
+  <tbody>  
+    <th data-field="name">{{ data._id }}</th>
+    <th data-field="name">{{ data.comm_test }}</th>  
+  </tbody>
+</table>
+</div>

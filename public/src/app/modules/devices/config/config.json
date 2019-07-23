@@ -1,0 +1,55 @@
+{"tokens":{ 
+  "component":{ 
+    "urlRelative":"/api/v1/device/tokens", 
+    "prefix":"toke", 
+    "label":"Token", 
+    "nameModule":"tokens" 
+  }, 
+  "model": 
+     [  
+  {
+    "key": "_id",
+    "label": "Id",
+    "value": "",
+    "required": false,
+    "type": "hidden",
+    "order": 1,
+    "control" : "textBox"
+
+  },
+  {
+    "key": "__v",
+    "label": "V",
+    "value": "",
+    "required": false,
+    "type": "hidden",
+    "order": 2,
+    "control" : "textBox"
+  },
+  {
+    "key": "took_code",
+    "label": "Name",
+    "value": "",
+    "required": true,
+    "type": "text",
+    "order": 3,
+    "control" : "textBox",
+    "unique" : true,
+    "typeDb" : "String"
+  }
+  ,
+  {
+    "key": "took_qr",
+    "label": "Qr",
+    "value": "",
+    "required": false,
+    "type": "text",
+    "order": 3,
+    "control" : "textBox",
+    "unique" : false,
+    "typeDb" : "String"
+  }
+  
+]
+} 
+}

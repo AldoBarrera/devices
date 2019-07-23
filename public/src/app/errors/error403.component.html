@@ -1,0 +1,18 @@
+﻿<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav bd-navbar-nav flex-row">
+              
+              
+     <li class="nav-item" *ngIf="!isLogged"><a [routerLink]=""  class="text-white" routerLinkActive="active" class="nav-link "(click)="login()">Login</a></li>
+              
+              <li class="nav-item" *ngIf="isLogged"><a [routerLink]="" class="text-white" routerLinkActive="active" class="nav-link " (click)="logout()">Logout</a></li>
+             
+            </ul>
+          </div>
+    
+    </header>
+    <body>
+            Error in Access permision call to the addministration.
+ 
+        </body>
+    

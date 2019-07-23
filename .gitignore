@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/log
+/server/src/services/netflow/configrequest.2.usearbarrera.json
+/node_modules
+/server/node_modules
+/public/node_modules
+/public/dist
+/server/dist
+/new 4.txt
+/public/src/app/employees/shared/employees.service.ts

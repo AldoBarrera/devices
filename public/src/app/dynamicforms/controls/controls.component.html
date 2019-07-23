@@ -1,0 +1,29 @@
+<div [formGroup]="form" class="form-group">
+    
+    <label *ngIf="control.type != 'hidden'" [attr.for]="control.key">{{control.label}}</label>
+    <ng-container [ngSwitch]="control.controlType">
+  
+      <input class="form-control" *ngSwitchCase="'textbox'" [formControlName]="control.key"
+              [id]="control.key" [type]="control.type" [required]="control.required">
+  
+      <select class="form-control" [id]="control.key" *ngSwitchCase="'dropdown'" [formControlName]="control.key">
+        <option *ngFor="let opt of control.options" [value]="opt.key">{{opt.value}}</option>
+      </select>
+
+      
+    </ng-container>
+
+    <div *ngIf="!isValid "
+    class="alert alert-danger">  
+      {{control.label}} is required
+
+    </div>
+
+    
+  
+</div> 
+  
+    
+  
+
+  
