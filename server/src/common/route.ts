@@ -100,13 +100,13 @@ export class CommonRouter extends App.CommonSocket{
   }
 
   async UpdateTokenByComp(req: Request, res: Response, next: NextFunction, commonComponent: any) {
-    let data = await commonComponent.GetLastRecords(1);
-    data.took_code = req.body.took_code;
+    let dataToUpdate = await commonComponent.GetLastRecord();
+    let data = req.body;
     data.took_qr = qr.imageSync(data.took_code, { type: 'svg' });
-    let query = {_id:req.params.id};
+    let query = {_id:dataToUpdate._id};
     const dataResponse = await commonComponent.UpdateData(query, data);
     if (dataResponse.n == 1 && dataResponse.ok == 1) {
-      const dataResponsePopulate = await commonComponent.GetPopulateDataById(req.params.id);
+      const dataResponsePopulate = await commonComponent.GetPopulateDataById(dataToUpdate._id);
       Global.io.sockets.emit('event', { type: commonComponent.modelDb.modelName.split("_")[1], action: "edit", data: dataResponsePopulate });
       res.send(dataResponsePopulate);
     } else {
