@@ -1,20 +1,16 @@
 ﻿<h1>
-  Displaying {{ data.length }} {{moduleName}}.
+  Read Token .
 </h1>
 
 
 <div>    
-  <a routerLink="/tokensadd" routerLinkActive="active" class="btn btn-primary">
-    Add
-  </a>
+
 </div>
 <table class="table">
   <thead class="thead-dark">
     <tr>   
-	   <th scope="col">Id</th> 
-<th scope="col">V</th> 
-<th scope="col">Code</th> 
-<th scope="col">Code</th> 
+	   
+
 
 
 
@@ -23,21 +19,14 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let singleData of data">  
+    <tr >  
     
-       <th scope="row"> 
-<a routerLink="{{singleData._id}}" routerLinkActive="active"> 
-{{ singleData._id }} 
-</a> 
-</th> 
-<td>{{ singleData.__v }}</td> 
-<td>{{ singleData.took_code }}</td> 
-<td><div style="
+     
+<td *ngIf = "data.length>0"><div style="
   width: 300px;
   height: 300px;"
-[innerHTML]="getQR(singleData.took_qr)"></div></td> 
-<td><a routerLink="/tokensedit/{{singleData._id}}" type="button" class="btn btn-info">Modificar</a></td>
-<td><button (click)="removeData(singleData)" type="button" class="btn btn-danger">Remover</button></td>
+[innerHTML]="getQR(data[0].took_qr)"></div></td> 
+
     </tr>
   </tbody>
 </table>

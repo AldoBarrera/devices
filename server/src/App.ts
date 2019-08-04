@@ -69,6 +69,9 @@ class App {
     this.express.use('/', router);
     this.express.use(log4js.connectLogger(log4js.getLogger("http"), { level: 'auto' }));
     this.express.use('/errorpermission', router); 
+    this.express.use('/serverip', ()=>{
+      this.express.get('ip')
+    }); 
 
 	DevDevicesModule.addRoutes(this.express, router, this.io); 
 

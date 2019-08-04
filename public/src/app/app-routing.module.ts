@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {Error403Component} from "./errors/error403.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/commons', pathMatch: 'full' },
+  { path: '', redirectTo: '/tokens', pathMatch: 'full' },
   { path: 'errorpermission', component: Error403Component}
 ];
 

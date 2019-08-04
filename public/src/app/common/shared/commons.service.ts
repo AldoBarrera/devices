@@ -155,6 +155,15 @@ export class CommonsService {
       );   
   } 
 
+  getIpAsObserver(): Observable<CommonsModel[]> {
+    
+    return this.http.get<CommonsModel[]>(this.url+"serverip")
+    .pipe(
+      tap(CommonsModel => this.log('fetched Data')),
+      catchError(this.handleError('getData', []))
+    );   
+  } 
+
   addDataAsObserver (data: CommonsModel): Observable<CommonsModel> {
    
     return this.http.post<CommonsModel>(this.url, data, httpOptions).pipe(

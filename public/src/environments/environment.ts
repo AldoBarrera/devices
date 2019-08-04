@@ -5,14 +5,14 @@ let Credentials = {
 };
 
 let keycloakConfig: KeycloakConfig = {
-  url: 'http://localhost:8080/auth',
+  url: 'http://10.0.0.100:8080/auth',
   realm: 'ip-monitor',
   clientId: 'ipmonitor',
   credentials: Credentials
 };
 
 let appConfig = {
-  url: 'http://localhost:3131'
+  url: 'http://10.0.0.100:3131'
 };
 
 export const environment = {

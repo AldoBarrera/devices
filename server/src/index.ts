@@ -1,6 +1,5 @@
 import * as http from 'http';
-
-const WSServer = require('socket.io');
+var fs = require("fs");
 
 
 import debug from 'debug';
@@ -11,7 +10,19 @@ debug('ts-express:server');
 
 const port = normalizePort(process.env.PORT || 3131);
 App.express.set('port', port);
+const WSServer = require('socket.io');
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('addr: '+add);
+  App.express.set('ip', add);
 
+
+  var data = "New File Contents";
+
+  fs.writeFile("temp.txt", data, (err) => {
+    if (err) console.log(err);
+    console.log("Successfully Written to File.");
+  });
+})
 const server = http.createServer(App.express);
 server.listen(port);
 server.on('error', onError);
